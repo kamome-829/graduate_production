@@ -170,6 +170,11 @@ $(() => {
         getPosition();
     });
 
+    $('#shop1').click(() => {
+        console.log("a");
+        alert('Click');
+    });
+
     // $("#shop" + count).on('click', function () {
     //     var text = document.getElementById(this);
     //     console.log("a");
