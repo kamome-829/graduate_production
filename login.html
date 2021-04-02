@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <script defer src="/__/firebase/5.3.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <title>login</title>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <ul class="progressbar">
+                <li class="active">ログイン</li>
+                <li class="">新規登録</li>
+                <li>アンケート</li>
+                <li>完了</li>
+            </ul>
+            <form class="login-form">
+                <div id="firebaseui-auth-container"></div>
+                <div id="loader">Loading...</div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="js/firebase.js"></script>
+    <script type="text/javascript">
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+        var uiConfig = {
+            callbacks: {
+                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+                    return true;
+                },
+                uiShown: function () {
+                    document.getElementById('loader').style.display = 'none';
+                }
+            },
+            signInFlow: 'popup',
+            signInSuccessUrl: './newusers.html',
+            signInOptions: [
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            ],
+        };
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+</body>
+
+</html>
