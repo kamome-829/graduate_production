@@ -1,0 +1,64 @@
+html,
+body {
+
+    font-family: tbnpgothic-std, serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 100%;
+
+}
+
+.image {
+    background-image: url("../img/banner.png");
+    background-size: cover;
+    background-position: center center;
+    width: 98%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+main {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.serach-area {
+    width: 100%;
+    height: 100%;
+    width: 98%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    border: solid 0.5px;
+    text-align: center;
+}
+
+
+.serach-area-box {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 40px;
+}
+
+li {
+    display: inline;
+    margin-left: 30px;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.header-box {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 50px;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
