@@ -1,8 +1,6 @@
 
-const db = firebase.firestore().collection('shop');
-db.onSnapshot(function (querySnapshot) {
-    // onSnapshotでcloud firestoreのデータ変更時に実行される!
-    // querySnapshot.docsにcloud firestoreのデータが配列形式で入る 
+const db = firebase.firestore().collection('shop')
+db.where("usersID", "==", "9XtWDWjt9LPIGLC3wEG1iUPdjDW2").limit(6).onSnapshot(function (querySnapshot) {
     const dataArray = []; // 必要なデータだけが入った新しい配列を作成 
     querySnapshot.docs.forEach(function (doc) {
         const data = {
@@ -14,10 +12,12 @@ db.onSnapshot(function (querySnapshot) {
     const img = [];
     const name = [];
     const middle_area = [];
+    const usersID = [];
     dataArray.forEach(function (data) {
         img.push(`${data.data.photo}`);
         name.push(`${data.data.name}`);
         middle_area.push(`${data.data.middle_area}`);
+        usersID.push(`${data.data.usersID}さんのお店`);
 
     })
     document.getElementById("img").src = img[0];
@@ -38,4 +38,88 @@ db.onSnapshot(function (querySnapshot) {
     $("#middle_area4").html(middle_area[3]);
     $("#middle_area5").html(middle_area[4]);
     $("#middle_area6").html(middle_area[5]);
+    $("#usersID").html(usersID[0]);
+});
+
+
+db.where("usersID", "==", "QLjKGGZ9nGZtXIHDy7bBFweQ1iB2").limit(6).onSnapshot(function (querySnapshot) {
+    const dataArray = []; // 必要なデータだけが入った新しい配列を作成 
+    querySnapshot.docs.forEach(function (doc) {
+        const data = {
+            id: doc.id,
+            data: doc.data(),
+        }
+        dataArray.push(data);
+    });
+    const img = [];
+    const name = [];
+    const middle_area = [];
+    const usersID = [];
+    dataArray.forEach(function (data) {
+        img.push(`${data.data.photo}`);
+        name.push(`${data.data.name}`);
+        middle_area.push(`${data.data.middle_area}`);
+        usersID.push(`${data.data.usersID}さんのお店`);
+
+    })
+    document.getElementById("img7").src = img[0];
+    document.getElementById("img8").src = img[1];
+    document.getElementById("img9").src = img[2];
+    document.getElementById("img10").src = img[3];
+    document.getElementById("img11").src = img[4];
+    document.getElementById("img12").src = img[5];
+    $("#name7").html(name[0]);
+    $("#name8").html(name[1])
+    $("#name9").html(name[2])
+    $("#name10").html(name[3])
+    $("#name11").html(name[4])
+    $("#name12").html(name[5])
+    $("#middle_area7").html(middle_area[0]);
+    $("#middle_area8").html(middle_area[1]);
+    $("#middle_area9").html(middle_area[2]);
+    $("#middle_area10").html(middle_area[3]);
+    $("#middle_area11").html(middle_area[4]);
+    $("#middle_area12").html(middle_area[5]);
+    $("#usersID2").html(usersID[0]);
+});
+
+db.where("usersID", "==", "XsgTIvsMKSR4BTiz0wHIoA8fOyy1").limit(6).onSnapshot(function (querySnapshot) {
+    const dataArray = []; // 必要なデータだけが入った新しい配列を作成 
+    querySnapshot.docs.forEach(function (doc) {
+        const data = {
+            id: doc.id,
+            data: doc.data(),
+        }
+        dataArray.push(data);
+    });
+    const img = [];
+    const name = [];
+    const middle_area = [];
+    const usersID = [];
+    dataArray.forEach(function (data) {
+        img.push(`${data.data.photo}`);
+        name.push(`${data.data.name}`);
+        middle_area.push(`${data.data.middle_area}`);
+        usersID.push(`${data.data.usersID}さんのお店`);
+
+    })
+    document.getElementById("img13").src = img[0];
+    document.getElementById("img14").src = img[1];
+    document.getElementById("img15").src = img[2];
+    document.getElementById("img16").src = img[3];
+    document.getElementById("img17").src = img[4];
+    document.getElementById("img18").src = img[5];
+    $("#name13").html(name[0]);
+    $("#name14").html(name[1])
+    $("#name15").html(name[2])
+    $("#name16").html(name[3])
+    $("#name17").html(name[4])
+    $("#name18").html(name[5])
+    $("#middle_area13").html(middle_area[0]);
+    $("#middle_area14").html(middle_area[1]);
+    $("#middle_area15").html(middle_area[2]);
+    $("#middle_area16").html(middle_area[3]);
+    $("#middle_area17").html(middle_area[4]);
+    $("#middle_area18").html(middle_area[5]);
+    $("#usersID3").html(usersID[0]);
 });
