@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="apiample.css">
+    <script src="apiample.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="login/js/firebase.js"></script>
+    <title>サンプルAPI</title>
+</head>
+
+<body>
+    <div>
+
+        <script>
+
+            function getId(ele) {
+                var buttonid = document.getElementById(ele);
+                const db = firebase.firestore().collection('shop');
+                $.ajax({
+                    url: 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=849fc7a3713b56fe&name_any=' + buttonid.value + '&format=jsonp',
+                    type: 'POST',
+                    dataType: 'jsonp',
+                    jsonpCallback: 'callback'
+                }).done(function (data) {
+                    data.results.shop.forEach(elm => {
+                        var block = document.getElementById("pic");
+                        const photo = elm.photo.pc.l;
+                        const name = elm.name;
+                        const address = elm.address;
+                        const middle_area = elm.middle_area.name;
+                        const budget = elm.budget.name;
+                        const genre = elm.genre.name;
+                        const urls = elm.urls.pc
+                        const data = {
+                            photo: photo,
+                            name: name,
+                            address: address,
+                            middle_area: middle_area,
+                            budget: budget,
+                            genre: genre,
+                            urls: urls,
+                        }
+                        db.add(data);
+                        console.log(data);
+                        block.setAttribute("src", photo);
+
+                    })
+                    //block_url.setAttribute("value", data.results.shop.urls);
+                }).fail(function (data) {
+                    console.log("わわわ");
+                });
+            }
+
+        </script>
+        <div class="container">
+            <input type="text" name="" id="text">
+            <a class="btn-open" id="open">確認</a>
+            <a class="btn-open" id="close">クリア</a>
+        </div>
+        <div class="list_area" id="list_area">
+            <p><input type="button" class="box" id="shop0" style="display:none" onclick="getId(this.id)"></p>
+            <p><input type="button" class="box" id="shop1" style="display:none" onclick="getId(this.id)"></p>
+            <p><input type="button" class="box" id="shop2" style="display:none" onclick="getId(this.id)"></p>
+            <p><input type="button" class="box" id="shop3" style="display:none" onclick="getId(this.id)"></p>
+            <p><input type="button" class="box" id="shop4" style="display:none" onclick="getId(this.id)"></p>
+            <p><input type="button" class="box" id="shop5" style="display:none" onclick="getId(this.id)"></p>
+            <p><input type="button" class="box" id="shop6" style="display:none" onclick="getId(this.id)"></p>
+            <p><input type="button" class="box" id="shop7" style="display:none" onclick="getId(this.id)"></p>
+            <p><input type="button" class="box" id="shop8" style="display:none" onclick="getId(this.id)"></p>
+            <p><input type="button" class="box" id="shop9" style="display:none" onclick="getId(this.id)"></p>
+        </div>
+        <div>
+            <p id="url"></p>
+            <img id="pic" src="">
+        </div>
+    </div>
+</body>
+
+</html>

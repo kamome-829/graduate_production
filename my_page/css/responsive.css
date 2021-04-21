@@ -1,0 +1,9 @@
+@media screen and (max-width: 480px) {
+
+    li {
+        flex-basis: 33.3%;
+    }
+
+
+
+}
