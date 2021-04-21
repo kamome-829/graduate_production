@@ -10,6 +10,7 @@ for (var element of input_genders) {
 }
 
 $('.btn-open').on('click', function () {
+    alert("a");
     const db = firebase.firestore().collection('users');
     var today = new Date();
     today = today.getTime();

@@ -156,3 +156,9 @@ label.error {
     border-radius: 6px;
 }
 
+.list_area{
+    position:absolute;
+    font-size:small;
+    text-align:center;
+    width:100%;
+}
