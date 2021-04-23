@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(84, 84, 84);
+
+}
+
+.header-box {
+    width: 98%;
+    margin: 0 auto;
+}
+
+
+.main {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+
+.header-box {
+    text-align: center;
+    border-bottom: solid 1px;
+}
+
+h2 {
+    margin: 0;
+    color: black
+}
+
+.container-box {
+    padding-top: 30px;
+    padding-bottom:30px ;
+}
+
+.Mypage-info {
+    display: flex;
+    text-align: center;
+}
+
+.Mypage-info p {
+    margin-right: 30px;
+}
+.container{
+    padding-bottom: 30px;
+}

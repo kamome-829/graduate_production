@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/newusers.css">
+    <title>newusers</title>
+</head>
+<html>
+
+<body>
+    <div class="newusers-page">
+        <div class="form">
+            <form action="finish.html">
+                <div class="container">
+                    <header>
+                        <ul class="progressbar">
+                            <li class="">ログイン</li>
+                            <li class="active">新規登録</li>
+                            <li>完了</li>
+                        </ul>
+                        <div class="row">
+                            <h3>ユーザー登録</h3>
+                        </div>
+                    </header>
+                </div>
+                <hr>
+                <div class="container">
+                    <form action="＃" method="get" class="row">
+                        <div class="form-group">
+                            <label for="name" class="text"><span class="labellabel-danger">必須</span> ニックネーム</label>
+                            <p><input type="text" id="name" name="name" class="form-control" placeholder="例：たろー"
+                                    autofocus required></p>
+                        </div>
+                        <div class="form-group">
+
+                            <label class="text"><span class="labellabel-danger">必須</span> 性別</label>
+                            <p>
+                                <label for="r_male">男性 <input id="r_male" type="radio" name="gender" value="男性"
+                                        required></label>
+                                <label for="r_female">女性 <input id="r_female" type="radio" name="gender"
+                                        value="女性"></label>
+                                <label for="r_female">その他 <input id="r_noanswer" type="radio" name="gender"
+                                        value="その他"></label>
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="text" for="job">あなたの今の職業</label>
+                            <select id="job" name="job" class="form-control">
+                                <option value="">選択してください</option>
+                                <option value="学生">学生</option>
+                                <option value="会社員">会社員</option>
+                                <option value="営業職">営業職</option>
+                                <option value="経理">経理</option>
+                                <option value="企画・管理">企画・管理</option>
+                                <option value="事務・アシスタント">事務・アシスタント</option>
+                                <option value="">販売・サービス職</option>
+                                <option value="販売・サービス職">専門職</option>
+                                <option value="金融系専門職">金融系専門職</option>
+                                <option value="公務員・農林水産関連職">公務員・農林水産関連職</option>
+                                <option value="技術職">技術職</option>
+                                <option value="医療系専門職">医療系専門職</option>
+                                <option value="クリエイター・クリエイティブ職">クリエイター・クリエイティブ職</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+                        <label class="text">生年月日</label>
+                        <p><input id="date" name="date" type="date" /></p>
+                        <div class="form-group">
+                            <label class="area-text">住んでる地域は？</label>
+                            <p><input type="text" id="area" name="area" class="form-control" placeholder="例：天神中央区"
+                                    autofocus></p>
+                        </div>
+                        <div class="container">
+                            <input type="submit" class="btn-open">
+                        </div>
+                    </form>
+                </div>
+                <hr>
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="js/firebase.js"></script>
+    <script type="text/javascript" src="js/newusers.js"></script>
+</body>
+
+</html>
