@@ -1,0 +1,31 @@
+@media screen and (max-width: 480px) {
+
+    /* 480px以下に適用されるCSS（スマホ用） */
+    html,
+    body {
+
+        font-family: tbnpgothic-std, serif;
+        font-weight: 500;
+        font-style: normal;
+        width: 100%;
+
+    }
+
+    .image {
+        background-image: url("../img/banner.png");
+        background-size: cover;
+        background-position: center center;
+        width: 98%;
+        height: 150px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 30px;
+        margin: 0px;
+        padding: 0px;
+        padding-bottom: 20px;
+        font-weight: bold;
+    }
+}

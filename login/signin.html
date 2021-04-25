@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+</head>
+
+<body>
+    <div id="firebaseui-auth-container"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
+
+    <script src="js/firebase.js"></script>
+    <script>
+        var uiConfig = {
+            // ログイン完了時のリダイレクト先
+            signInSuccessUrl: '../mainpage/index.html',
+
+
+            // 利用する認証機能
+            signInOptions: [
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            ],
+
+            // 利用規約のURL(任意で設定)
+            tosUrl: 'http://example.com/kiyaku/',
+            // プライバシーポリシーのURL(任意で設定)
+            privacyPolicyUrl: 'https://miku3.net/privacy.html'
+        };
+
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        ui.start('#firebaseui-auth-container', uiConfig);
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            var userid = user.uid;
+            sessionStorage.setItem('userid', userid);
+            if (user) {
+                console.log("a");
+                console.log(userid);
+            } else {
+                console.log("b");
+            }
+        });
+    </script>
+</body>
+
+</html>
