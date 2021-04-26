@@ -10,8 +10,7 @@ db.where("usersID", "==", userid).onSnapshot(function (querySnapshot) {
         }
         dataArray.push(data);
     });
-    const img = [];
-    const usersID = [];
+    const img = []
     dataArray.forEach(function (data) {
         img.push(`${data.data.photo}`);
     })

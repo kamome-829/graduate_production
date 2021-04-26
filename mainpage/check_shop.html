@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>check</title>
+    <link rel="stylesheet" type="text/css" href="./check_shop.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
+</head>
+
+<body>
+    <header id="top-head">
+        <div class="inner">
+            <h1><a href="#">LOGO</a></h1>
+            <div id="nav_toggle">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="../post/index.html">投稿</a></li>
+                    <li><a href="../my_page/index.html">マイページ</a></li>
+                    <li><a href="../search/index.html">検索</a></li>
+                    <li><a href="../rogin_before/index.html">ログアウト</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="top">
+            <div class="header-box">
+                <h2 id="usersID"></h2>
+                <a href="" id="btn" class="btn01">友達追加</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="info">
+                <dl>
+                    <dt>店の名前:</dt>
+                    <dd id="name">q</dd>
+                </dl>
+                <dl>
+                    <dt>評価:</dt>
+                    <dd>q</dd>
+                </dl>
+                <dl>
+                    <dt>価格:</dt>
+                    <dd id="budget">q</dd>
+                </dl>
+                <dl>
+                    <dt>ジャンル:</dt>
+                    <dd id="genre">q</dd>
+                </dl>
+                <dl>
+                    <dt>住所:</dt>
+                    <dd id="address">q</dd>
+                </dl>
+                <dl>
+                    <dt>コメント:</dt>
+                    <dd id="comment">q</dd>
+                </dl>
+                <dl>
+                    <dt>url:</dt>
+                    <dd id="urls">q</dd>
+                </dl>
+            </div>
+            <div class="imgbox">
+                <img id="img" src="">
+            </div>
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+        <script src="../login/js/firebase.js"></script>
+        <script src="./check_shop.js"></script>
+</body>
+
+</html>
