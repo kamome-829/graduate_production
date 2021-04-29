@@ -5,15 +5,16 @@ body {
     font-weight: 500;
     font-style: normal;
     width: 100%;
+    background-color: #FBF8EC;
 
 }
 
-.image {
-    background-image: url("../img/banner.png");
+.image1 {
+    background-image: url("../img/S__3473418.jpg");
     background-size: cover;
     background-position: center center;
-    width: 98%;
-    height: 400px;
+    width: 95%;
+    height: 650px;
     margin: 0 auto;
 }
 
@@ -61,4 +62,108 @@ li {
     padding: 0px;
     padding-bottom: 20px;
     font-weight: bold;
+}
+
+.box {
+    display: flex;
+    margin: 0 auto;
+    width: 95%;
+}
+
+/* container */
+.wrapper {
+    width: 100%;
+}
+
+.wrapper .container {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 80px 0px;
+}
+
+/* content */
+.wrapper .content .heading {
+    margin: 0px 0px 40px 0px;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .wrapper .content .list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.wrapper .content .list-item {
+    margin: 50px 0px;
+    padding: 0px 50px;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .wrapper .content .list-item {
+        margin: 0px;
+        width: calc(100% / 3);
+    }
+}
+
+@media (min-width: 992px) {
+    .wrapper .content .list-item .image {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 0px auto 20px auto;
+        border-radius: 50%;
+
+    }
+}
+
+.wrapper .content .list-item .image {
+    display: block;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    margin: 0px auto 20px auto;
+    border-radius: 50%;
+
+}
+
+.wrapper .content .list-item .text {
+    line-height: 1.8rem;
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.gnav_menu:hover {
+    opacity: 0.7;
+}
+
+.gnav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    z-index: 99999;
+    right: 50px;
+    top: 20px;
+}
+
+.gnav_menu {
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    background: linear-gradient(86.13deg, #f7b870 -3.42%, #d9773e 59.59%);
+    /* バナーの背景色 */
+}
+
+.gnav_menu a {
+    color: #FBF8EC;
+    text-decoration: none;
 }

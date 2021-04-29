@@ -11,12 +11,12 @@
 
     }
 
-    .image {
-        background-image: url("../img/banner.png");
+    .image1 {
+        background-image: url("../img/S__3473418.jpg");
         background-size: cover;
         background-position: center center;
         width: 98%;
-        height: 150px;
+        height: 250px;
         margin: 0 auto;
         text-align: center;
     }
