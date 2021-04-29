@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>data</title>
+    <link rel="stylesheet" type="text/css" href="./css/header.css">
+    <link rel="stylesheet" type="text/css" href="./css/profile.css">
+    <link rel="stylesheet" type="text/css" href="./css/data_style.css">
+</head>
+
+<body>
+    <header id="top-head">
+        <div class="inner">
+            <h1><a href="#">LOGO</a></h1>
+            <div id="nav_toggle">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../mainpage/index.html">HOME</a></li>
+                    <li><a href="../post/index.html">投稿</a></li>
+                    <li><a href="./index.html">マイページ</a></li>
+                    <li><a href="../search/index.html">検索</a></li>
+                    <li><a href="../rogin_before/index.html">ログアウト</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="main">
+        <div class="top">
+            <div class="header-box">
+                <h2 id="usersID"></h2>
+                <a href="profile.html">
+                    <p>プロフィール編集</p>
+                </a>
+            </div>
+            <div class="header-contents">
+                <div class="Mypage-info">
+                    <a href="index.html">
+                        <p>投稿数100</p>
+                    </a>
+                    <a href="">
+                        <p>基本データ</p>
+                    </a>
+                    <a>
+                        <p>友達100人</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <form id="contact">
+            <div class="container-box">
+                <div class="container">
+                    <div class="head">
+                        <h2></h2>
+                    </div>
+                    <input id="name" type="text" name="name" placeholder="名前    " /><br />
+                    <input id="age" type="text" name="point" placeholder="年齢    " /><br />
+                    <input id="gender" type="text" name="point" placeholder="性別     " /><br />
+                    <input id="atmosphere" type="text" name="point" placeholder="好きなお店の雰囲気    " /><br />
+                    <input id="genre" type="text" name="point" placeholder="よく行くお店のジャンル     " /><br />
+                    <!-- <textarea type="text" name="message" placeholder="コメント"></textarea><br /> -->
+                </div>
+            </div>
+        </form>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+        <script src="../login/js/firebase.js"></script>
+        <script src="header.js"></script>
+        <script>
+            var userid = sessionStorage.getItem('userid');
+            const users = firebase.firestore().collection('users')
+            users.where("usersID", "==", userid).onSnapshot(function (querySnapshot) {
+                const dataArray = []; // 必要なデータだけが入った新しい配列を作成 
+                querySnapshot.docs.forEach(function (doc) {
+                    const data = {
+                        id: doc.id,
+                        data: doc.data(),
+                    }
+                    dataArray.push(data);
+                });
+                const name = [];
+                const age = [];
+                const gender = [];
+                const atmosphere = [];
+                const genre = [];
+                const usersID = [];
+                dataArray.forEach(function (data) {
+                    name.push(`${data.data.name}`)
+                    age.push(`${data.data.age}`)
+                    gender.push(`${data.data.gender}`)
+                    atmosphere.push(`${data.data.atmosphere}`)
+                    genre.push(`${data.data.genre}`)
+                    usersID.push(`${data.data.name}さんの基本データ`);
+                })
+                $("#usersID").html(usersID[0]);
+                $("#name").attr('placeholder', name[0]);
+                $("#age").attr('placeholder', age[0]);
+                $("#gender").attr('placeholder', gender[0]);
+                $("#atmosphere").attr('placeholder', atmosphere[0]);
+                $("#genre").attr('placeholder', genre[0]);
+                $("#usersID").attr('placeholder', usersID[0]);
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>search</title>
+    <link rel="stylesheet" type="text/css" href="css/styl.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+
+<body>
+    <header id="top-head">
+        <div class="inner">
+            <h1><a href="#">LOGO</a></h1>
+            <div id="nav_toggle">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../mainpage/index.html">HOME</a></li>
+                    <li><a href="../post/index.html">投稿</a></li>
+                    <li><a href="../my_page/index.html">マイページ</a></li>
+                    <li><a href="">検索</a></li>
+                    <li><a href="../rogin_before/index.html">ログアウト</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container-box">
+        <div class="container">
+            <div class="head">
+                <h2></h2>
+            </div>
+            <select name="selectbox" id="selectbox">
+                <option value="なし">ジャンル</option>
+                <option value="居酒屋">居酒屋</option>
+                <option value="ラーメン">ラーメン</option>
+                <option value="和食">和食</option>
+                <option value="焼き肉・ホルモン">焼き肉・ホルモン</option>
+            </select><br />
+            <select name="selectbox_age" id="selectbox_age">
+                <option value="なし">価格</option>
+                <option value="501～1000円">501～1000円</option>
+                <option value="1001～2000円">1001～2000円</option>
+                <option value="2001～3000円">2001～3000円</option>
+                <option value="3001～4000円">3001～4000円</option>
+                <option value="4001～5000円">4001～5000円</option>
+            </select><br />
+            <!-- <textarea type="text" name="message" placeholder="コメント"></textarea><br />
+                <div class="message">Message Sent</div> -->
+            <button id="submit">検索</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="../login/js/firebase.js"></script>
+    <script src="js/newsearchs.js"></script>
+</body>
+
+</html>

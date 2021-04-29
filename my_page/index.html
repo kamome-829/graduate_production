@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/header.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="./css/responsive.css">
+</head>
+
+<body>
+
+    <header id="top-head">
+        <div class="inner">
+            <h1><a href="#">LOGO</a></h1>
+            <div id="nav_toggle">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../mainpage/index.html">HOME</a></li>
+                    <li><a href="../post/index.html">投稿</a></li>
+                    <li><a href="">マイページ</a></li>
+                    <li><a href="../search/index.html">検索</a></li>
+                    <li><a href="../rogin_before/index.html">ログアウト</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="top">
+            <div class="header-box">
+                <h2 id="usersID"></h2>
+                <a href="profile.html">
+                    <p>プロフィール編集</p>
+                </a>
+            </div>
+            <div class="header-contents">
+                <div class="Mypage-info">
+
+
+                    <a href="index.html">
+                        <p>投稿</p>
+                    </a>
+
+
+                    <a href="data.html">
+                        <p>基本データ</p>
+                    </a>
+
+
+                    <a href="friend.html">
+                        <p>友達</p>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+        <ul id="photo-list" class="photo-list">
+
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="../login/js/firebase.js"></script>
+    <script src="header.js"></script>
+    <script src="mypage_firebase.js"></script>
+</body>
+
+</html>

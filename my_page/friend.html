@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>result</title>
+    <link rel="stylesheet" type="text/css" href="./css/header.css">
+    <link rel="stylesheet" type="text/css" href="../search/css/result.css">
+</head>
+
+<body>
+    <header id="top-head">
+        <div class="inner">
+            <h1><a href="#">LOGO</a></h1>
+            <div id="nav_toggle">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="../post/index.html">投稿</a></li>
+                    <li><a href="../my_page/index.html">マイページ</a></li>
+                    <li><a href="../search/index.html">検索</a></li>
+                    <li><a href="../rogin_before/index.html">ログアウト</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="box">
+        <table>
+            <thead>
+                <tr>
+                    <th>友達</th>
+                </tr>
+            </thead>
+            <tbody id="list">
+
+            </tbody>
+            <!-- <tr width="95%" id="list"></tr> -->
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="../login/js/firebase.js"></script>
+    <script src="friend.js"></script>
+</body>
+
+</html>
