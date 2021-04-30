@@ -40,6 +40,7 @@ db.onSnapshot(function (querySnapshot) {
     const middle_area = [];
     const usersID = [];
     const info = [];
+    const evaluation = [];
     dataArray.forEach(function (data) {
         //var uid = data.data.usersID;
         //console.log(uid + " " + userid);     
@@ -50,6 +51,7 @@ db.onSnapshot(function (querySnapshot) {
             middle_area.push(`${data.data.middle_area}`);
             info.push(`${data.data.username}さんのお店`);
             usersID.push(`${data.data.usersID}`)
+            evaluation.push(`${data.data.evaluation}`)
         } else if ((friendID.length === 0) && (data.data.genre == "ラーメン")) {
             console.log("2")
             img.push(`${data.data.photo}`);
@@ -57,6 +59,7 @@ db.onSnapshot(function (querySnapshot) {
             middle_area.push(`${data.data.middle_area}`);
             info.push(`おすすめの${data.data.genre}のお店`);
             usersID.push(`${data.data.usersID}`)
+            evaluation.push(`${data.data.evaluation}`)
         }
     });
 
@@ -78,6 +81,12 @@ db.onSnapshot(function (querySnapshot) {
     $("#middle_area4").html(middle_area[3]);
     $("#middle_area5").html(middle_area[4]);
     $("#middle_area6").html(middle_area[5]);
+    $("#evaluation").html(evaluation[0]);
+    $("#evaluation2").html(evaluation[1]);
+    $("#evaluation3").html(evaluation[2]);
+    $("#evaluation4").html(evaluation[3]);
+    $("#evaluation5").html(evaluation[4]);
+    $("#evaluation6").html(evaluation[5]);
     $("#usersID").html(info[0]);
 
     $("#name").on("click", function () {
@@ -139,6 +148,7 @@ db.onSnapshot(function (querySnapshot) {
     const middle_area = [];
     const usersID = [];
     const info = [];
+    const evaluation = [];
     dataArray.forEach(function (data) {
         if (friendID[1] === data.data.usersID) {
             console.log("1")
@@ -147,6 +157,7 @@ db.onSnapshot(function (querySnapshot) {
             middle_area.push(`${data.data.middle_area}`);
             info.push(`${data.data.username}さんのお店`);
             usersID.push(`${data.data.usersID}`)
+            evaluation.push(`${data.data.evaluation}`)
         } else if ((friendID.length <= 1) && (data.data.genre == "居酒屋")) {
             console.log("2")
             img.push(`${data.data.photo}`);
@@ -154,6 +165,7 @@ db.onSnapshot(function (querySnapshot) {
             middle_area.push(`${data.data.middle_area}`);
             info.push(`おすすめの${data.data.genre}のお店`);
             usersID.push(`${data.data.usersID}`)
+            evaluation.push(`${data.data.evaluation}`)
         }
     })
     document.getElementById("img7").src = img[0];
@@ -174,6 +186,12 @@ db.onSnapshot(function (querySnapshot) {
     $("#middle_area10").html(middle_area[3]);
     $("#middle_area11").html(middle_area[4]);
     $("#middle_area12").html(middle_area[5]);
+    $("#evaluation7").html(evaluation[0]);
+    $("#evaluation8").html(evaluation[1]);
+    $("#evaluation9").html(evaluation[2]);
+    $("#evaluation10").html(evaluation[3]);
+    $("#evaluation11").html(evaluation[4]);
+    $("#evaluation12").html(evaluation[5]);
     $("#usersID2").html(info[0]);
 
     $("#name7").on("click", function () {
@@ -234,6 +252,7 @@ db.onSnapshot(function (querySnapshot) {
     const middle_area = [];
     const usersID = [];
     const info = [];
+    const evaluation = [];
     dataArray.forEach(function (data) {
         if (friendID[2] === data.data.usersID) {
             console.log("1")
@@ -242,6 +261,7 @@ db.onSnapshot(function (querySnapshot) {
             middle_area.push(`${data.data.middle_area}`);
             info.push(`${data.data.username}さんのお店`);
             usersID.push(`${data.data.usersID}`)
+            evaluation.push(`${data.data.evaluation}`)
         } else if ((friendID.length <= 2) && (data.data.genre == "和食")) {
             console.log("2")
             img.push(`${data.data.photo}`);
@@ -249,6 +269,7 @@ db.onSnapshot(function (querySnapshot) {
             middle_area.push(`${data.data.middle_area}`);
             info.push(`おすすめの${data.data.genre}のお店`);
             usersID.push(`${data.data.usersID}`)
+            evaluation.push(`${data.data.evaluation}`)
         }
     })
     document.getElementById("img13").src = img[0];
@@ -269,6 +290,12 @@ db.onSnapshot(function (querySnapshot) {
     $("#middle_area16").html(middle_area[3]);
     $("#middle_area17").html(middle_area[4]);
     $("#middle_area18").html(middle_area[5]);
+    $("#evaluation13").html(evaluation[0]);
+    $("#evaluation14").html(evaluation[1]);
+    $("#evaluation15").html(evaluation[2]);
+    $("#evaluation16").html(evaluation[3]);
+    $("#evaluation17").html(evaluation[4]);
+    $("#evaluation18").html(evaluation[5]);
     $("#usersID3").html(info[0]);
 
     $("#name13").on("click", function () {
